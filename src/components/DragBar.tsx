@@ -17,7 +17,7 @@ export default function DragBar() {
   };
 
   return (
-    <div className="h-8 bg-card flex" data-tauri-drag-region>
+    <div className="h-8 flex" data-tauri-drag-region>
       <div className="flex ml-auto">
         <button
           className="w-12 h-full flex items-center justify-center hover:bg-foreground/10"
