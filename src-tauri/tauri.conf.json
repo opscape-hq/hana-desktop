@@ -10,13 +10,7 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "windows": [
-      {
-        "title": "hana-cli",
-        "width": 800,
-        "height": 600
-      }
-    ],
+    "windows": [],
     "security": {
       "csp": null
     }
@@ -25,9 +19,11 @@
     "active": true,
     "targets": "all",
     "icon": [
-      "icons/32x32.png",
-      "icons/128x128.png",
-      "icons/128x128@2x.png",
+      "icons/logo-32.png",
+      "icons/logo-64.png",
+      "icons/logo-128.png",
+      "icons/logo-512.png",
+      "icons/logo-1024.png",
       "icons/icon.icns",
       "icons/icon.ico"
     ]
