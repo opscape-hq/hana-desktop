@@ -1,17 +1,22 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "hana-cli",
+  "productName": "hana",
   "version": "0.1.0",
-  "identifier": "cc.mcjk.hana-cli",
+  "identifier": "cc.mcjk.hana",
   "build": {
-    "beforeDevCommand": "npm run dev",
+    "beforeDevCommand": "pnpm dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "npm run build",
-    "frontendDist": "../dist"
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../build"
   },
   "app": {
-    "macOSPrivateApi": true,
-    "windows": [],
+    "windows": [
+      {
+        "title": "hana",
+        "width": 800,
+        "height": 600
+      }
+    ],
     "security": {
       "csp": null
     }
@@ -20,11 +25,9 @@
     "active": true,
     "targets": "all",
     "icon": [
-      "icons/logo-32.png",
-      "icons/logo-64.png",
-      "icons/logo-128.png",
-      "icons/logo-512.png",
-      "icons/logo-1024.png",
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
     ]
