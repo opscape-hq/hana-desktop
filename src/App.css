@@ -1,18 +1,94 @@
+/* Fira Code font faces */
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/Fira_Code/static/FiraCode-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/Fira_Code/static/FiraCode-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/Fira_Code/static/FiraCode-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/Fira_Code/static/FiraCode-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/Fira_Code/static/FiraCode-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --border: 1px solid #333333;
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-ring: var(--ring);
+
+  --color-border: 1px solid #333333;
 }
 
 :root {
   --background: black;
   --foreground: white;
+
+  --primary: #ffffff;
+  --primary-foreground: #000000;
+
+  --secondary: #4a4a4a;
+  --secondary-foreground: #ffffff;
+
+  --ring: var(--secondary);
+
   --border: 1px solid #333333;
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 body {
-  @apply bg-background text-foreground;
+  @apply select-none bg-background text-foreground;
+  font-family: 'Fira Code', 'FiraCode', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'monospace';
+}
+
+main {
+  @apply bg-background;
 }

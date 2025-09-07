@@ -1,5 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
+  
   "productName": "hana",
   "version": "0.1.0",
   "identifier": "cc.mcjk.hana",
@@ -10,16 +11,10 @@
     "frontendDist": "../build"
   },
   "app": {
-    "windows": [
-      {
-        "title": "hana",
-        "width": 800,
-        "height": 600
-      }
-    ],
     "security": {
       "csp": null
-    }
+    },
+    "macOSPrivateApi": true
   },
   "bundle": {
     "active": true,
