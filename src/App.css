@@ -1,44 +1,95 @@
-/* Fira Code font faces */
+/* JetBrains Mono font faces */
 @font-face {
-  font-family: 'Fira Code';
-  src: url('/fonts/Fira_Code/static/FiraCode-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Fira Code';
-  src: url('/fonts/Fira_Code/static/FiraCode-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Fira Code';
-  src: url('/fonts/Fira_Code/static/FiraCode-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Fira Code';
-  src: url('/fonts/Fira_Code/static/FiraCode-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Fira Code';
-  src: url('/fonts/Fira_Code/static/FiraCode-Light.ttf') format('truetype');
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/static/JetBrainsMono-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Fira Code';
-  src: url('/fonts/Fira_Code/FiraCode-VariableFont_wght.ttf') format('truetype');
-  font-weight: 300 700;
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/static/JetBrainsMono-Regular.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/static/JetBrainsMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/static/JetBrainsMono-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/static/JetBrainsMono-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Public Sans font faces */
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/static/PublicSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/static/PublicSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/static/PublicSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/static/PublicSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/static/PublicSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/PublicSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Public Sans';
+  src: url('/fonts/Public_Sans/PublicSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 
@@ -72,7 +123,7 @@
 
   --ring: var(--secondary);
 
-  --border: 1px solid #333333;
+  --border: 1px solid oklch(30% 0 0 / 0.3);
 }
 
 @layer base {
@@ -86,7 +137,7 @@
 
 body {
   @apply select-none bg-background text-foreground;
-  font-family: 'Fira Code', 'FiraCode', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'monospace';
+  font-family: 'Public Sans', 'PublicSans', 'system-ui', sans-serif;
 }
 
 main {
