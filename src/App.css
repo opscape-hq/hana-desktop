@@ -99,6 +99,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-titlebar-background: var(--titlebar-background);
 
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -114,6 +115,7 @@
 :root {
   --background: black;
   --foreground: white;
+  --titlebar-background: rgb(26, 26, 26);
 
   --primary: #ffffff;
   --primary-foreground: #000000;
@@ -138,8 +140,4 @@
 body {
   @apply select-none bg-background text-foreground;
   font-family: 'Public Sans', 'PublicSans', 'system-ui', sans-serif;
-}
-
-main {
-  @apply bg-background;
 }
