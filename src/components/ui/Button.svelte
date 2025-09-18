@@ -17,6 +17,6 @@
   } = $props();
 </script>
 
-<button class={`py-1 px-4 rounded-sm transition-colors ${variants[variant]} ${className}`} onclick={onClick}>
+<button class={`py-1 px-4 rounded-xl transition-colors ${variants[variant]} ${className}`} onclick={onClick}>
   {@render children()}
 </button>
