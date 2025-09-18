@@ -35,19 +35,19 @@
       <div class="ml-auto flex">
         <button
           onclick={() => appWindow.minimize()}
-          class="h-full w-10 hover:bg-white/20 flex justify-center items-center"
+          class="h-full w-10 hover:bg-zinc-600/60 transition-colors flex justify-center items-center"
         >
           <Minus size={16} />
         </button>
         <button
           onclick={() => appWindow.toggleMaximize()}
-          class="h-full w-10 hover:bg-white/20 flex justify-center items-center"
+          class="h-full w-10 hover:bg-zinc-600/60 transition-colors flex justify-center items-center"
         >
           <Maximize size={16} />
         </button>
         <button
           onclick={() => appWindow.close()}
-          class="h-full w-10 hover:bg-white/20 flex justify-center items-center"
+          class="h-full w-10 hover:bg-red-600/60 transition-colors flex justify-center items-center"
         >
           <X size={16} />
         </button>
