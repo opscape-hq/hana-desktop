@@ -10,6 +10,7 @@
     <Button variant="primary">Log In</Button>
     <Button variant="secondary">Sign up</Button>
   </div>
+  <a href="terminal">test</a>
 </main>
 
 <Logo class="w-14 h-14 absolute bottom-4 left-1/2 -translate-x-1/2" />

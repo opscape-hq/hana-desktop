@@ -19,14 +19,17 @@
   const appWindow = getCurrentWindow();
 </script>
 
-<div class="antialiased flex flex-col h-screen bg-titlebar-background">
+<div class="antialiased absolute inset-0 flex flex-col h-screen bg-titlebar-background">
   <!-- Titlebar -->
-  <div class="select-none h-10 box-border text-sm flex">
+  <div class="select-none min-h-10 box-border text-sm flex">
     <!-- Traffic lights space -->
     <div class={isMac ? "w-[78px]" : "w-6"} data-tauri-drag-region></div>
 
-    <div class="flex flex-1 pt-1" data-tauri-drag-region>
-      <div class="px-2 flex items-center rounded-t-lg bg-background">
+    <div class="flex flex-1 pt-1 gap-1" data-tauri-drag-region>
+      <div class="px-2 flex items-center rounded-lg bg-tab hover:bg-tab-accent">
+        <span>root@192.168.0.1 — neofetch</span>
+      </div>
+      <div class="px-2 flex items-center rounded-lg bg-background">
         <span>root@192.168.0.1 — neofetch</span>
       </div>
     </div>
@@ -55,7 +58,12 @@
     {/if}
   </div>
 
-  <div class="flex-1 bg-background mx-1 mb-1 rounded-xl" transition:slide>
+  <div class="flex overflow-hidden flex-1">
+    <div class="w-8">
+
+    </div>
+    <div class="flex-1 overflow-hidden bg-background m-1 rounded-xl" transition:slide>
     {@render children()}
+  </div>
   </div>
 </div>

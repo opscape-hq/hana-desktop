@@ -107,21 +107,32 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
+  --color-tab: var(--tab);
+  --color-tab-foreground: var(--tab-foreground);
+  --color-tab-accent: var(--tab-accent);
+  --color-tab-accent-foreground: var(--tab-accent-foreground);
+
   --color-ring: var(--ring);
 
   --color-border: 1px solid #333333;
 }
 
 :root {
-  --background: black;
+  --background: rgb(31, 31, 31);
   --foreground: white;
-  --titlebar-background: rgb(26, 26, 26);
+  --titlebar-background: rgb(14, 14, 14);
 
   --primary: #ffffff;
   --primary-foreground: #000000;
 
   --secondary: #4a4a4a;
   --secondary-foreground: #ffffff;
+
+  --tab: transparent;
+  --tab-foreground: white;
+
+  --tab-accent: #333333;
+  --tab-accent-foreground: white;
 
   --ring: var(--secondary);
 
@@ -140,4 +151,11 @@
 body {
   @apply select-none bg-background text-foreground;
   font-family: 'Public Sans', 'PublicSans', 'system-ui', sans-serif;
+}
+
+.xterm-helper-textarea {
+  outline: none !important;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  caret-color: transparent !important;
 }
