@@ -11,7 +11,7 @@
   import { onMount } from "svelte";
   import { Maximize, Minus, X } from "@lucide/svelte";
   onMount(async () => {
-    isMac = await invoke("system_info");
+    isMac = await invoke("platform") === "macos";
   });
 
   import { getCurrentWindow } from "@tauri-apps/api/window";
@@ -23,7 +23,7 @@
   <!-- Titlebar -->
   <div class="select-none h-10 box-border text-sm flex">
     <!-- Traffic lights space -->
-    <div class={isMac ? "w-[74px]" : "w-6"} data-tauri-drag-region></div>
+    <div class={isMac ? "w-[78px]" : "w-6"} data-tauri-drag-region></div>
 
     <div class="flex flex-1 pt-1" data-tauri-drag-region>
       <div class="px-2 flex items-center rounded-t-lg bg-background">

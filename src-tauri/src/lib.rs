@@ -2,7 +2,7 @@ use tauri::{TitleBarStyle, WebviewUrl, WebviewWindowBuilder};
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 #[tauri::command]
-fn system_info() -> String {
+fn platform() -> String {
     return std::env::consts::OS.to_string();
 }
 
@@ -18,7 +18,7 @@ pub fn run() {
                 .title_bar_style(TitleBarStyle::Overlay)
                 .hidden_title(true)
                 .accept_first_mouse(true)
-                .traffic_light_position(tauri::LogicalPosition::new(10.0, 18.0));
+                .traffic_light_position(tauri::LogicalPosition::new(10.0, 24.0));
 
             #[cfg(target_os = "windows")]
             let win_builder = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
@@ -35,6 +35,7 @@ pub fn run() {
 
             Ok(())
         })
+        .invoke_handler(tauri::generate_handler![platform])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
