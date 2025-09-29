@@ -1794,10 +1794,12 @@ dependencies = [
 name = "hana"
 version = "0.1.0"
 dependencies = [
+ "async-trait",
  "chrono",
  "keyring",
  "portable-pty",
  "russh",
+ "russh-keys",
  "serde",
  "serde_json",
  "tauri",

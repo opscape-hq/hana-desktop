@@ -1,2 +1,2 @@
-# hana-cli
-Hana is that one SSH client. Swifty and nifty, built on Rust - open-source forever.
+# hana-desktop
+Opscape Hana is a modern cross-platform SSH client with extensive cloud functionalities.

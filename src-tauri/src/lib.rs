@@ -53,7 +53,7 @@ pub fn run() {
                 .decorations(false)
                 .accept_first_mouse(true);
 
-            let window = win_builder.build().map_err(|e| {
+            let _window = win_builder.build().map_err(|e| {
                 eprintln!("Failed to build the window: {}", e);
                 e
             })?;
@@ -63,11 +63,19 @@ pub fn run() {
         .manage(Arc::new(Mutex::new(SSHManager::new())) as SSHManagerState)
         .invoke_handler(tauri::generate_handler![
             platform,
-            commands::create_ssh_connection,
-            commands::disconnect_ssh,
-            commands::send_terminal_input,
-            commands::resize_terminal,
-            commands::list_ssh_connections
+            commands::ssh_commands::create_ssh_connection,
+            commands::ssh_commands::connect_ssh,
+            commands::ssh_commands::disconnect_ssh,
+            commands::ssh_commands::remove_ssh_connection,
+            commands::ssh_commands::get_connection_state,
+            commands::ssh_commands::list_connection_states,
+            commands::ssh_commands::create_ssh_channel,
+            commands::ssh_commands::request_pty,
+            commands::ssh_commands::request_shell,
+            commands::ssh_commands::send_terminal_input,
+            commands::ssh_commands::resize_terminal,
+            commands::ssh_commands::close_ssh_channel,
+            commands::ssh_commands::list_ssh_connections
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
