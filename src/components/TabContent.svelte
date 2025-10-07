@@ -75,14 +75,12 @@
       $effect(() => {
         // Trigger on translateX changes (which is derived from activeTabIndex)
         const currentTranslateX = translateXPx;
-
-        console.log(currentTranslateX)
         
         // Animate the horizontal slide between tabs
         gsap.to(containerElement, {
           x: currentTranslateX,
           duration: 0.5,
-          ease: "power2.out",
+          ease: "elastic.out(0.6, 0.9)",
           // Don't overwrite scale animations, only x
           overwrite: false,
         });

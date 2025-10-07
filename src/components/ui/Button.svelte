@@ -2,6 +2,7 @@
   const variants = {
     primary: "bg-primary text-primary-foreground hover:bg-primary/80 border border-primary",
     secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-secondary",
+    ghost: "bg-transparent hover:bg-white/10 border border-transparent",
   };
 
   let {

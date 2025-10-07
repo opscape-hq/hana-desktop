@@ -10,13 +10,17 @@
     X,
     Home,
     Terminal as TerminalIcon,
+    Settings,
   } from "@lucide/svelte";
   import { getCurrentWindow } from "@tauri-apps/api/window";
 
   // Import modular components
   import TabBar from "../components/TabBar.svelte";
   import TabContent from "../components/TabContent.svelte";
+  import Sidebar from "../components/Sidebar.svelte";
+  import SidePanel from "../components/SidePanel.svelte";
   import type { Tab } from "../types/tab";
+  import Button from "../components/ui/Button.svelte";
 
   let isMac: boolean = $state(false);
   const appWindow = getCurrentWindow();
@@ -28,6 +32,28 @@
   onMount(async () => {
     isMac = (await invoke("platform")) === "macos";
   });
+
+  // ============================================
+  // Sidebar Panel State Management
+  // ============================================
+
+  let activePanel = $state<string | null>(null);
+
+  /**
+   * Toggles the sidebar panel on/off
+   * Clicking the same icon closes the panel
+   */
+  function togglePanel(panelId: string) {
+    if (activePanel === panelId) {
+      activePanel = null;
+    } else {
+      activePanel = panelId;
+    }
+  }
+
+  function closePanel() {
+    activePanel = null;
+  }
 
   // ============================================
   // Tab State Management
@@ -181,17 +207,26 @@
 
   <!-- Main content area with spacing and rounded corners -->
   <div class="flex overflow-hidden flex-1">
-    <div class="w-8"></div>
+    <div class="w-16 flex flex-col justify-start bg-zinc-900/50 border-r border-zinc-800">
+      <!-- Sidebar Navigation -->
+      <Sidebar activePanel={activePanel} onPanelToggle={togglePanel} />
+    </div>
     <div class="relative flex-1 overflow-hidden m-1 rounded-xl">
-      <!-- Tab content with modular TabContent component -->
-      <TabContent
-        {tabs}
-        {activeTabId}
-        {isTransitioning}
-        onUpdateTabState={updateTabState}
-      >
-        {@render children()}
-      </TabContent>
+      <!-- Side Panel -->
+      <SidePanel activePanel={activePanel} onClose={closePanel} />
+      
+      <!-- Main content with blur effect when panel is open -->
+      <div class="h-full {activePanel ? 'blur-sm pointer-events-none' : ''} transition-all duration-300" style={activePanel ? 'margin-left: 20rem;' : ''}>
+        <!-- Tab content with modular TabContent component -->
+        <TabContent
+          {tabs}
+          {activeTabId}
+          {isTransitioning}
+          onUpdateTabState={updateTabState}
+        >
+          {@render children()}
+        </TabContent>
+      </div>
     </div>
   </div>
 </div>

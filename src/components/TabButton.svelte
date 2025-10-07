@@ -32,7 +32,7 @@
           change: (force: number) => {
             // Map pressure (0-1) to zoomOut (0-1) with capping
             const zoomValue = Math.min(force * 2, 1);
-            
+
             // Update state directly - GSAP will handle smoothing in TabContent
             animation.zoomOut = zoomValue;
           },
@@ -60,6 +60,9 @@
 
 <div
   bind:this={tabElement}
+  onpointerup={(e) => {
+    animation.zoomOut = 0;
+  }}
   data-tab-id={tab.id}
   class="group relative flex items-center px-3 transition-all duration-200 cursor-pointer select-none w-36 {isActive
     ? 'rounded-t-lg bg-tab-accent shadow-sm'
