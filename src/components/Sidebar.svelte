@@ -27,18 +27,18 @@
   ];
 </script>
 
-<div class="flex flex-col gap-2 items-center py-4">
+<div class="flex flex-col gap-2 items-center pt-2 px-2">
   {#each navItems as item}
     <Button
       variant="ghost"
-      class="w-12 h-12 p-0 flex items-center justify-center rounded-lg {activePanel ===
+      class="w-full bg-green-500 aspect-square !p-0 flex items-center justify-center rounded-lg {activePanel ===
       item.id
         ? 'bg-white/20'
         : ''}"
       onClick={() => onPanelToggle(item.id)}
     >
       {@const Icon = item.icon}
-      <Icon size={20} />
+      <Icon size={14} />
     </Button>
   {/each}
 </div>

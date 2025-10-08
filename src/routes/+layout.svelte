@@ -207,16 +207,16 @@
 
   <!-- Main content area with spacing and rounded corners -->
   <div class="flex overflow-hidden flex-1">
-    <div class="w-16 flex flex-col justify-start bg-zinc-900/50 border-r border-zinc-800">
+    <div class="w-14 flex flex-col justify-start">
       <!-- Sidebar Navigation -->
       <Sidebar activePanel={activePanel} onPanelToggle={togglePanel} />
     </div>
-    <div class="relative flex-1 overflow-hidden m-1 rounded-xl">
+    <div class="relative flex-1 overflow-hidden m-1 ml-0 rounded-xl">
       <!-- Side Panel -->
       <SidePanel activePanel={activePanel} onClose={closePanel} />
       
       <!-- Main content with blur effect when panel is open -->
-      <div class="h-full {activePanel ? 'blur-sm pointer-events-none' : ''} transition-all duration-300" style={activePanel ? 'margin-left: 20rem;' : ''}>
+      <div class="h-full {activePanel ? 'blur-sm pointer-events-none' : ''} transition-all duration-300">
         <!-- Tab content with modular TabContent component -->
         <TabContent
           {tabs}

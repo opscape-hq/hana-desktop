@@ -22,7 +22,7 @@
 
 {#if activePanel}
   <div
-    class="absolute left-0 top-0 bottom-0 w-80 bg-zinc-900/95 backdrop-blur-sm border-r border-zinc-700 z-10 shadow-2xl transition-transform duration-300"
+    class="absolute left-0 top-0 bottom-0 w-80 bg-titlebar-background backdrop-blur-sm border-r border-zinc-700 z-10 shadow-2xl transition-transform duration-300"
     style="transform: translateX(0);"
   >
     <div class="flex items-center justify-between p-4 border-b border-zinc-700">
