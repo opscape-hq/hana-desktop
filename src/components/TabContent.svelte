@@ -99,7 +99,7 @@
   >
     {#each tabs as tab}
       <div class="w-full h-full flex-shrink-0 relative rounded-xl overflow-hidden bg-background">
-        {#if tab.id === "welcome"}
+        {#if tab.id === "home"}
           <!-- Welcome tab content (from +page.svelte) -->
           {@render children()}
         {:else if tab.type === "dynamic"}

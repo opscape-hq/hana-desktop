@@ -17,4 +17,5 @@ export interface Tab {
   type: "static" | "dynamic";
   closable: boolean;
   internalState?: TabInternalState;
+  condensed?: boolean;
 }

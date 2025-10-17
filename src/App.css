@@ -107,6 +107,9 @@
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
 
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
   --color-tab: var(--tab);
   --color-tab-foreground: var(--tab-foreground);
   --color-tab-accent: var(--tab-accent);
@@ -127,6 +130,9 @@
 
   --secondary: #4a4a4a;
   --secondary-foreground: #ffffff;
+
+  --muted: #313131;
+  --muted-foreground: #b0b0b0;
 
   --tab: transparent;
   --tab-foreground: white;

@@ -37,7 +37,8 @@ pub fn run() {
             #[cfg(target_os = "macos")]
             let win_builder = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
                 .title("Hana")
-                .inner_size(1100.0, 700.0)
+                .inner_size(1000.0, 600.0)
+                .min_inner_size(700.0, 445.0)
                 .resizable(true)
                 .decorations(true)
                 .title_bar_style(TitleBarStyle::Overlay)
@@ -48,7 +49,8 @@ pub fn run() {
             #[cfg(target_os = "windows")]
             let win_builder = WebviewWindowBuilder::new(app, "main", WebviewUrl::default())
                 .title("Hana")
-                .inner_size(1100.0, 700.0)
+                .inner_size(1000.0, 600.0)
+                .min_inner_size(700.0, 445.0)
                 .resizable(true)
                 .decorations(false)
                 .accept_first_mouse(true);

@@ -3,9 +3,17 @@
     foreground = "var(--foreground)",
     background = "rgba(0, 0, 0, 0)",
     class: className = "",
+    raster = false,
   } = $props();
 </script>
 
+{#if raster}
+<img
+  src="/logo.png"
+  alt="Opscape Logo"
+  class={`aspect-square ${className}`}
+/>
+{:else}
 <svg
   width="512"
   height="512"
@@ -90,3 +98,4 @@
     />
   </g>
 </svg>
+{/if}

@@ -64,12 +64,12 @@
     animation.zoomOut = 0;
   }}
   data-tab-id={tab.id}
-  class="group relative flex items-center px-3 transition-all duration-200 cursor-pointer select-none w-36 {isActive
+  class="group relative flex items-center px-3 {!tab.condensed && "pr-2"} transition-all duration-200 cursor-pointer select-none {tab.condensed ? 'w-auto' : 'w-36'} {isActive
     ? 'rounded-t-lg bg-tab-accent shadow-sm'
     : 'rounded-lg bg-tab hover:bg-tab-accent/50'}"
 >
-  <tab.icon size={14} class="flex-shrink-0 opacity-70 mr-2" />
-  <span class="text-xs font-medium truncate flex-1">{tab.title}</span>
+  <tab.icon size={14} class="flex-shrink-0 opacity-70 {!tab.condensed && "mr-2"}" />
+  <span class="text-xs font-medium truncate flex-1 {tab.condensed && "hidden"}">{tab.title}</span>
 
   {#if tab.closable}
     <button

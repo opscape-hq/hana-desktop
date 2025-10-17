@@ -1,6 +1,6 @@
 use crate::ssh::types::*;
-use tauri::State;
 use std::sync::Arc;
+use tauri::State;
 
 // Global SSH Manager state
 pub type SSHManagerState = Arc<tauri::async_runtime::Mutex<crate::ssh::manager::SSHManager>>;
@@ -185,7 +185,9 @@ pub async fn send_terminal_input_to_session(
 ) -> Result<(), String> {
     let manager = ssh_manager.inner().lock().await;
     if let Some(connection) = manager.get_connection(&connection_id).await {
-        connection.send_terminal_input(&terminal_id, data.as_bytes()).await
+        connection
+            .send_terminal_input(&terminal_id, data.as_bytes())
+            .await
     } else {
         Err(format!("Connection {} not found", connection_id))
     }
@@ -203,7 +205,9 @@ pub async fn resize_terminal_session(
 ) -> Result<(), String> {
     let manager = ssh_manager.inner().lock().await;
     if let Some(connection) = manager.get_connection(&connection_id).await {
-        connection.resize_terminal(&terminal_id, cols, rows, pixel_width, pixel_height).await
+        connection
+            .resize_terminal(&terminal_id, cols, rows, pixel_width, pixel_height)
+            .await
     } else {
         Err(format!("Connection {} not found", connection_id))
     }

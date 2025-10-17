@@ -18,7 +18,7 @@
       
     //   // echo it back so you see it
     //   term.write(data);
-      
+
     //   // or send it to your backend shell/websocket/etc
     // });
   });
